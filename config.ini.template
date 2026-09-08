@@ -1,0 +1,15 @@
+# ============================================================================
+# MedTRx DB Bloat & Health Diagnostic Scanner Configuration Template
+# ============================================================================
+
+[database]
+host=localhost
+port=5433
+dbname=amisdbv2
+user=apuser
+password=Syscom@123
+
+[paths]
+# Explicit path to psql.exe (e.g. C:\Program Files\PostgreSQL\17\bin\psql.exe)
+# Leave blank to auto-detect from system PATH and standard PostgreSQL install directories.
+psql_path=

@@ -1,0 +1,12 @@
+# Logs
+logs/
+*.log
+
+# Release outputs (unpacked)
+# release/
+
+# System / Editor
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
