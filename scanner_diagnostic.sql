@@ -14,7 +14,7 @@ SELECT
     current_database() AS "Database",
     pg_size_pretty(pg_database_size(current_database())) AS "Total DB Size";
 
-\echo(
+\echo ''
 \echo ============================================================================
 \echo [2/5] TOP TABLES BY DISK USAGE & DEAD TUPLE RATIO (PHYSICAL BLOAT)
 \echo ============================================================================
@@ -41,7 +41,7 @@ FROM pg_stat_user_tables
 ORDER BY pg_total_relation_size(relid) DESC
 LIMIT 12;
 
-\echo(
+\echo ''
 \echo ============================================================================
 \echo [3/5] PRESCRIPTION & SCHEDULE DUPLICATION AUDIT (LOGICAL BLOAT)
 \echo ============================================================================
@@ -83,7 +83,7 @@ GROUP BY "Schedule_Date"
 ORDER BY "Schedule_Date" DESC
 LIMIT 15;
 
-\echo(
+\echo ''
 \echo ============================================================================
 \echo [4/5] LEGACY AMIS v1 "AMiS_Patient_Prescription" INFILTRATION AUDIT
 \echo ============================================================================
@@ -109,7 +109,7 @@ BEGIN
     END IF;
 END $$;
 
-\echo(
+\echo ''
 \echo ============================================================================
 \echo [5/5] CLINICAL DATA SUMMARY METRICS
 \echo ============================================================================
@@ -122,7 +122,7 @@ SELECT
     (SELECT COUNT(*) FROM "public"."Schedule") AS "Total Schedules",
     (SELECT COUNT(*) FROM "public"."AMiS_Patient_Medication_Dispense") AS "Total Dispense Logs";
 
-\echo(
+\echo ''
 \echo ============================================================================
 \echo DIAGNOSTIC AUDIT COMPLETE
 \echo ============================================================================
